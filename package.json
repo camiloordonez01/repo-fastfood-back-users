@@ -1,14 +1,14 @@
 {
     "name": "repo-fastfood-back-users",
     "description": "AWS lambda FastFood for Users",
-    "version": "1.0.0",
+    "version": "0.0.1",
     "main": "index.js",
     "license": "MIT",
     "scripts": {
-        "dev": "nodemon node ./local.js",
-        "start": "nodemon node ./local.js",
-        "format": "prettier --write \"**/*.{ts,json}\"",
-        "lint": "eslint --fix --ext .js .",
+        "start": "nodemon ./local.ts",
+        "build": "npx tsc -p .",
+        "format": "prettier --write \"**/*.+(js|ts|json)\"",
+        "lint": "eslint --fix --ext \"**/*.{ts,tsx}\"",
         "test": "jest --coverage --silent --verbose",
         "test:log": "jest --coverage --verbose",
         "clean": "rm -rf yarn.lock && rm -rf node_modules",
@@ -17,6 +17,7 @@
     "dependencies": {
         "@aws-sdk/client-cognito-identity-provider": "^3.100.0",
         "aws-serverless-express": "^3.4.0",
+        "class-validator": "^0.14.0",
         "cors": "^2.8.5",
         "dotenv": "^14.3.2",
         "express": "^4.17.2",
@@ -24,16 +25,26 @@
         "moment-timezone": "^0.5.34",
         "mysql2": "^2.3.3",
         "node-mocks-http": "^1.11.0",
-        "sequelize": "^6.15.0",
+        "reflect-metadata": "^0.1.13",
+        "typeorm": "^0.3.12",
         "winston": "^3.5.0"
     },
     "devDependencies": {
+        "@types/aws-serverless-express": "^3.3.5",
+        "@types/cors": "^2.8.13",
+        "@types/express": "^4.17.17",
+        "@types/node": "^18.13.0",
+        "@typescript-eslint/eslint-plugin": "^5.52.0",
+        "@typescript-eslint/parser": "^5.52.0",
         "eslint": "^8.8.0",
-        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-import": "^2.27.5",
         "eslint-plugin-jest": "^26.0.0",
-        "eslint-plugin-prettier": "^4.0.0",
+        "eslint-plugin-n": "^15.6.1",
+        "eslint-plugin-prettier": "^4.2.1",
         "jest": "^27.4.7",
         "nodemon": "^2.0.15",
-        "prettier": "^2.5.1"
+        "prettier": "^2.5.1",
+        "ts-node": "^10.9.1",
+        "typescript": "^4.9.5"
     }
 }

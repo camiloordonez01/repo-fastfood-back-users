@@ -4,12 +4,14 @@
 
 Este repositorio tiene como objetivo proveer las funcionalidades relacionadas con los usuarios de FastFood.
 
-Consiste en una AWS lambda API REST con arquitectura limpia y su lenguaje de programación principal es JavaScript
+Consiste en una AWS lambda API REST con arquitectura limpia y su lenguaje de programación principal es Typescript
 
 ### ⚙️ Tecnologías utilizadas
 
+-   Typescript
 -   Node js
 -   Express js
+-   Typeorm
 -   Mysql
 -   JWT
 -   Nodemon
