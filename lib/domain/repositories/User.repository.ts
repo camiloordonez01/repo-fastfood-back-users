@@ -1,9 +1,9 @@
-import { IUserStorage } from '../../interfaces/storage/types'
+import { UserStorage } from '../../interfaces/storage/types'
 import Repository from './Repository'
 
 class UserRepository extends Repository {
-    protected storage: IUserStorage
-    constructor(userStorage: IUserStorage) {
+    protected storage: UserStorage
+    constructor(userStorage: UserStorage) {
         super(userStorage)
         this.storage = userStorage
     }

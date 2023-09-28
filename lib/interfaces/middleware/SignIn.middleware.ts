@@ -60,7 +60,7 @@ const SignInMiddleware = async (req: Request, res: Response, next: NextFunction)
         if (error instanceof Error) {
             logger.crit({
                 level: 'crit',
-                file: 'AuthMiddleware.ts',
+                file: 'SignInMiddleware.ts',
                 message: `${error.message}`,
                 stack: error.stack,
             })

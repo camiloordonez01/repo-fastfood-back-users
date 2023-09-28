@@ -1,11 +1,14 @@
-import moment from 'moment-timezone'
+import jwt from 'jsonwebtoken'
+import { ObjectLiteral } from '../../shared/application/common/types'
 
-const { TIMEZONE } = process.env
+import { keyEncript } from '../../../keys'
+
 /**
- * Get the expiration date for the token
+ * Get token
  *
  * @author camilo.ordonez
  *
  */
-export const getExpirationDate = (seconds: number) =>
-    moment(new Date().getTime()).tz(TIMEZONE).add(seconds, 'seconds').format('YYYY-MM-DD HH:mm:ss').toString()
+export const getToken = (data: ObjectLiteral, expiresIn = 3600) => {
+    return jwt.sign(data, keyEncript, { expiresIn })
+}

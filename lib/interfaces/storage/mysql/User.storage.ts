@@ -11,7 +11,7 @@ class UserStorage extends StorageMysql {
     async getUserByEmail(email: string) {
         const user = await this.repository.findOneBy({ email })
 
-        return new UserEntity(user as UserEntity)
+        return user ? new UserEntity(user as UserEntity) : user
     }
 }
 

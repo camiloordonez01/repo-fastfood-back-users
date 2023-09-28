@@ -20,8 +20,8 @@ class Server {
         this.port = Number(PORT) ?? 3000
         this.middleware()
         this.routes()
-        this.noFound()
-        this.handle()
+        this.notFound()
+        this.handler()
     }
 
     private middleware() {
@@ -36,17 +36,17 @@ class Server {
         this.app.use(RouterMain)
     }
 
-    private handle() {
-        this.app.use((data: unknown, req: Request, res: Response) => handleResponse(data, res))
-        this.app.use((err: Error, req: Request, res: Response) => handleError(err, res))
+    private handler() {
+        this.app.use((data: unknown, req: Request, res: Response, next: NextFunction) => handleResponse(data, res, next))
+        this.app.use((err: any, req: Request, res: Response, next: NextFunction) => handleError(err, res))
     }
 
     listen() {
         this.app.listen(this.port, () => console.log(`Listening on: http://localhost:${this.port}`))
     }
 
-    private noFound() {
-        // No Found
+    private notFound() {
+        // Not Found
         this.app.use((req, res, next) => {
             try {
                 throw new ErrorHandler(404, messages.ERROR_NOT_FOUNT)

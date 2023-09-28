@@ -1,6 +1,6 @@
-import { IMessages } from './lib/shared/application/common/types'
+import { Messages } from './lib/shared/application/common/types'
 
-const messages: IMessages = {
+const messages: Messages = {
     EMAIL_INVALID: 'El formato del correo electrónico es incorrecto',
     LOGIN_INVALID: 'Usuario o contraseña inválidos',
     PASSWORD_INVALID:

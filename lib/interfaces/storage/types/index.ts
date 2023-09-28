@@ -1,6 +1,6 @@
 import { UserEntity } from '../../../domain/entities'
-import { IStorage } from '../../../shared/interfaces/storage/types'
+import { Storage } from '../../../shared/interfaces/storage/types'
 
-export interface IUserStorage extends IStorage {
-    getUserByEmail: (email: string) => Promise<UserEntity>
+export interface UserStorage extends Storage {
+    getUserByEmail: (email: string) => Promise<UserEntity | null>
 }

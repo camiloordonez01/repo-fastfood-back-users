@@ -1,8 +1,8 @@
-import { IStorage } from '../../shared/interfaces/storage/types'
+import { Storage } from '../../shared/interfaces/storage/types'
 
 class Repository {
-    protected storage: IStorage
-    constructor(userStorage: IStorage) {
+    protected storage: Storage
+    constructor(userStorage: Storage) {
         this.storage = userStorage
     }
 
