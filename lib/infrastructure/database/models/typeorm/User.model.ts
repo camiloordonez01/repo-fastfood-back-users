@@ -1,7 +1,8 @@
 import { Column, Entity, PrimaryGeneratedColumn,  } from 'typeorm'
+import Model from '../../../../shared/infrastructure/database/Model'
 
 @Entity('tbl_users')
-class UserModel {
+class UserModel extends Model {
     @PrimaryGeneratedColumn({ name: 'user_id' })
     userId?: number
 
@@ -23,35 +24,21 @@ class UserModel {
     @Column()
     password: string
 
-    @Column({ name: 'active_row', default: '1' })
-    activeRow?: number
-
-    @Column({ name: 'created_at' })
-    createdAt?: string
-
-    @Column({ name: 'updated_at' })
-    updatedAt?: string
-
     constructor(
         name: string,
         lastName: string,
         email: string,
         password: string,
         userId?: number,
-        activeRow?: number,
-        createdAt?: string,
-        updatedAt?: string,
         username?: string
     ) {
+        super()
         this.userId = userId
         this.name = name
         this.lastName = lastName
         this.email = email
         this.username = username
         this.password = password
-        this.activeRow = activeRow
-        this.createdAt = createdAt
-        this.updatedAt = updatedAt
     }
 }
 
