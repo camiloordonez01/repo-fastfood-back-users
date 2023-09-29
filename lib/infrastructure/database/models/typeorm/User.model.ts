@@ -13,9 +13,6 @@ class UserModel extends Model {
     lastName: string
 
     @Column()
-    avatar?: string
-
-    @Column()
     email: string
 
     @Column()
