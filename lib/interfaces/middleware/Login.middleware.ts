@@ -8,12 +8,12 @@ import { validateRequired } from '../../shared/messages'
 import regexs from '../../shared/regexs'
 
 /**
- * Validate the information when signIn
+ * Validate the information when login
  *
  * @author camilo.ordonez
  *
  */
-const SignInMiddleware = async (req: Request, res: Response, next: NextFunction) => {
+const LoginMiddleware = async (req: Request, res: Response, next: NextFunction) => {
     try {
         // create schema object
         const schemaBody = Joi.object({
@@ -60,7 +60,7 @@ const SignInMiddleware = async (req: Request, res: Response, next: NextFunction)
         if (error instanceof Error) {
             logger.crit({
                 level: 'crit',
-                file: 'SignInMiddleware.ts',
+                file: 'LoginMiddleware.ts',
                 message: `${error.message}`,
                 stack: error.stack,
             })
@@ -68,4 +68,4 @@ const SignInMiddleware = async (req: Request, res: Response, next: NextFunction)
         next(error)
     }
 }
-export default SignInMiddleware
+export default LoginMiddleware

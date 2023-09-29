@@ -1,10 +1,10 @@
 import { Request, Response, NextFunction } from 'express'
 import { logger, ResponseHandler } from '../../shared/infrastructure/handler'
 
-import { SignIn } from '../../application/use_cases'
+import { Login } from '../../application/use_cases'
 
 const file = 'Users.controller.ts'
-export const signIn = async (req: Request, res: Response, next: NextFunction) => {
+export const login = async (req: Request, res: Response, next: NextFunction) => {
     try {
         interface BodyInterface {
             email: string
@@ -12,7 +12,7 @@ export const signIn = async (req: Request, res: Response, next: NextFunction) =>
         }
         const { email, password }: BodyInterface = req.body
 
-        next(new ResponseHandler(201, await SignIn(email, password)))
+        next(new ResponseHandler(201, await Login(email, password)))
     } catch (error) {
         if (error instanceof Error) {
             logger.crit({

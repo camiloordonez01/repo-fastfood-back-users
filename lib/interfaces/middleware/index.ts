@@ -1,1 +1,1 @@
-export { default as SignInMiddleware } from './SignIn.middleware'
+export { default as LoginMiddleware } from './Login.middleware'

@@ -1,11 +1,11 @@
 import express from 'express'
 
-import { signIn } from '../../../interfaces/controllers/Users.controller'
+import { login } from '../../../interfaces/controllers/Users.controller'
 
-import { SignInMiddleware } from '../../../interfaces/middleware'
+import { LoginMiddleware } from '../../../interfaces/middleware'
 
 const UsersRouter = express.Router()
 
-UsersRouter.post('/signin', SignInMiddleware, signIn)
+UsersRouter.post('/login', LoginMiddleware, login)
 
 export default UsersRouter
