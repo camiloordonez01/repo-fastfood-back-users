@@ -13,7 +13,7 @@ import regexs from '../../shared/regexs'
  * @author camilo.ordonez
  *
  */
-const LoginMiddleware = async (req: Request, res: Response, next: NextFunction) => {
+const LoginMiddleware = async (req: Request, _: Response, next: NextFunction) => {
     try {
         // create schema object
         const schemaBody = Joi.object({

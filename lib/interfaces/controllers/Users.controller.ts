@@ -4,7 +4,7 @@ import { logger, ResponseHandler } from '../../shared/infrastructure/handler'
 import { Login } from '../../application/use_cases'
 
 const file = 'Users.controller.ts'
-export const login = async (req: Request, res: Response, next: NextFunction) => {
+export const login = async (req: Request, _: Response, next: NextFunction) => {
     try {
         interface BodyInterface {
             email: string

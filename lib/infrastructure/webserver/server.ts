@@ -37,8 +37,8 @@ class Server {
     }
 
     private handler() {
-        this.app.use((data: unknown, req: Request, res: Response, next: NextFunction) => handleResponse(data, res, next))
-        this.app.use((err: any, req: Request, res: Response, next: NextFunction) => handleError(err, res))
+        this.app.use((data: unknown, _: Request, res: Response, next: NextFunction) => handleResponse(data, res, next))
+        this.app.use((err: any, _: Request, res: Response, __: NextFunction) => handleError(err, res))
     }
 
     listen() {
@@ -47,7 +47,7 @@ class Server {
 
     private notFound() {
         // Not Found
-        this.app.use((req, res, next) => {
+        this.app.use((_, __, next) => {
             try {
                 throw new ErrorHandler(404, messages.ERROR_NOT_FOUNT)
             } catch (error) {

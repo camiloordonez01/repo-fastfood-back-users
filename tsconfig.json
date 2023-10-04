@@ -12,7 +12,21 @@
         "forceConsistentCasingInFileNames": true,
         "isolatedModules": true,
         "experimentalDecorators": true,
-        "emitDecoratorMetadata": true
+        "emitDecoratorMetadata": true,
+        "allowJs": true,
+        "resolveJsonModule": true,
+        "allowSyntheticDefaultImports": true,
+
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
+        
+
+        "inlineSources": true,
+        "inlineSourceMap": true,
     },
     "include": ["**/*.ts", "*.ts"],
     "exclude": ["node_modules"]

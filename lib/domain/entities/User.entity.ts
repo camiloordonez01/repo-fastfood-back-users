@@ -1,7 +1,6 @@
 import Entity from '../../shared/domain/entities/Entity'
-import { EntityRowsDefault } from './types'
 
-class UserEntity extends Entity implements EntityRowsDefault {
+class UserEntity extends Entity {
     userId?: number
     name: string
     lastName: string
